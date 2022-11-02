@@ -17,7 +17,13 @@ class HelpFragment : Fragment() {
         binding = FragmentHelpBinding.inflate(layoutInflater, container, false)
 
         //TODO: When the light bulb image is clicked, use the parentFragmentManager to replace this fragment with the GameFragment
+        binding.lightBulbImage.setOnClickListener {
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<GameFragment>(R.id.fragment_container_view)
 
+            }
+        }
         return binding.root
     }
 

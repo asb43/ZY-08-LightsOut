@@ -1,6 +1,7 @@
 package com.zybooks.lightsout
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.view.children
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import com.zybooks.lightsout.databinding.FragmentGameBinding
@@ -52,9 +54,20 @@ class GameFragment : Fragment() {
         binding.newGameButton.setOnClickListener { startGame() }
 
         //TODO: When the chooseColorButton is clicked (setOnClickListener), use the parentFragmentMana ger toreplace this fragment with the ColorFragment
-
+        binding.chooseColorButton.setOnClickListener {
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<ColorFragment>(R.id.fragment_container_view)
+            }
+        }
         //TODO: When the helpButton is clicked, use the parentFragmentManager to replace this fragment with HelpFragment
+        binding.helpButton.setOnClickListener {
+            parentFragmentManager.commit {
+                setReorderingAllowed(true)
+                replace<HelpFragment>(R.id.fragment_container_view)
 
+             }
+        }
         return binding.root
     }
 

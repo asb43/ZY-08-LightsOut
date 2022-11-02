@@ -12,7 +12,6 @@
                 then change it to ColorFragment and run the app again -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"
-        android:name="com.zybooks.lightsout.GameFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
